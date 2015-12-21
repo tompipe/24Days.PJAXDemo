@@ -65,6 +65,7 @@
     </nav>
 </header>
 
+<div id="pjaxContainer">
 @if (IsSectionDefined("Breadcrumb"))
 {
     @RenderSection("Breadcrumb", false)
@@ -88,6 +89,7 @@ else
     @RenderBody()
 </div>
 
+</div>
 <div class="atoz">
     <div class="container">
         <div class="row">
