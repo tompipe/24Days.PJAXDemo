@@ -6,7 +6,12 @@
     Html.RequiresCss("//fonts.googleapis.com/css?family=Ubuntu:400,500,700|Open+Sans:700,400|Pacifico:400");
     Html.RequiresCss("~/css/layout.css");
 
-    Html.RequiresCss("~/css/" + Umbraco.Field("sectionStyle", recursive: true));
+    var sectionStyle = (HtmlString)Umbraco.Field("sectionStyle", recursive: true);
+
+    if (sectionStyle != null && sectionStyle.ToString().Length > 2)
+    {
+        Html.RequiresCss("~/css/" + sectionStyle);
+    }
 }
 
 @section Metadata {
