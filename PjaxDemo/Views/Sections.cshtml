@@ -3,24 +3,18 @@
     Layout = "SiteDesign.cshtml";
 }
 
-@if (IsPjaxRequest)
-{
-    @RenderView()
-}
-else
+@if (!IsPjaxRequest)
 {
     @section Metadata { @RenderSection("Metadata", false) }
-
-    @section Breadcrumb { <!-- no breadcrumb --> }
-
-    @RenderView()
-
-    @section Footer { @RenderSection("Footer", false) }
 }
+    
+@section Breadcrumb { <!-- no breadcrumb --> }
 
-@helper RenderView()
+@section PageHeader { @RenderSection("PageHeader", false) }
+
+@RenderBody()
+
+@if (!IsPjaxRequest)
 {
-    @section PageHeader { @RenderSection("PageHeader", false) }
-
-    @RenderBody()
+    @section Footer { @RenderSection("Footer", false) }
 }
