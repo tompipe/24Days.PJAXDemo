@@ -50,9 +50,16 @@
                 ga('create', '@Umbraco.Field("analyticsCode", recursive: true)', 'auto');
                 ga('send', 'pageview');
 
-                new Pjax({
-                    selectors: ["title", "#pjaxContainer"]
-                });
+                @if (!Request.Url.Host.StartsWith("pjaxdemo-off"))
+                {
+                    <text>
+                        new Pjax( {selectors:  ["title", "#pjaxContainer"]});
+
+                        $('.nav a').click(function () {
+                            $('.navbar-collapse').collapse('hide');
+                        });
+                    </text>
+                }
             </script>
             <!-- end google -->
         </body>
