@@ -1,14 +1,26 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits PjaxDemo.App_Code.PjaxTemplatePage
 @{
     Layout = "SiteDesign.cshtml";
 }
 
-@section Metadata { @RenderSection("Metadata", false) }
+@if (IsPjaxRequest)
+{
+    @RenderView()
+}
+else
+{
+    @section Metadata { @RenderSection("Metadata", false) }
 
-@section Breadcrumb { <!-- no breadcrumb --> }
+    @section Breadcrumb { <!-- no breadcrumb --> }
 
-@section PageHeader { @RenderSection("PageHeader", false) }
+    @RenderView()
 
-@RenderBody()
+    @section Footer { @RenderSection("Footer", false) }
+}
 
-@section Footer { @RenderSection("Footer", false) }
+@helper RenderView()
+{
+    @section PageHeader { @RenderSection("PageHeader", false) }
+
+    @RenderBody()
+}

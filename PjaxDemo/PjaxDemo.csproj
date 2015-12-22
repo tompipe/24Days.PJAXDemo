@@ -6033,6 +6033,7 @@
     <Content Include="App_Code\ezSearchBoostrapper.cs" />
     <Content Include="App_Code\LocalGov\AtoZHelper.cs" />
     <Content Include="App_Code\LocalGov\ContactFormSurfaceController.cs" />
+    <Content Include="App_Code\PjaxTemplatePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
