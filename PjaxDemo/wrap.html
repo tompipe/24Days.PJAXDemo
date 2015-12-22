@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pjax Comparison</title>
+    <style>
+        *{vertical-align:top;}
+        body{padding:20px;font-family:sans-serif;overflow-y:scroll;}
+        h2{margin:0 0 20px 0;}
+        span.small{font-size:60%;vertical-align:middle;}
+        #url{margin:0 0 20px 0px;display:block;}
+        #url input[type=text]{border:solid 1px #666;width:85%;margin:0 auto;font-size:2em;text-align:left;}
+        #url input[type=submit]{display:none;}
+        #url #options{float:right;line-height:25px;width:13%;}
+        #url #options input{margin-top:5px;}
+        #frames{width:100%;margin-bottom:10px;padding-bottom:20px;}
+        .frame{margin-right:20px;float:left;}
+        .frame:last-child{margin-right:0;}
+        .frame img{display:none;vertical-align:middle;}
+        iframe{border:solid 1px #000;}
+        .widthOnly {height:580px;}
+        .widthOnly h2 span{display:none;}
+        .widthOnly iframe{height:500px;}
+    </style>
+</head>
+<body id="container">
+    <div id="frames" class="widthOnly">
+        <div id="inner">
+            <div id="f2" class="frame">
+                <h2><a href="http://pjaxdemo.tompipe.co.uk/">Pjax Enabled</a></h2>
+                <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="320" height="640" src="http://pjaxdemo.tompipe.co.uk/"></iframe>
+            </div>
+            <div id="f3" class="frame">
+                <h2><a href="http://pjaxdemo-off.tompipe.co.uk/">Pjax Disabled</a></h2>
+                <iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="320" height="640" src="http://pjaxdemo-off.tompipe.co.uk/"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <script src="responsive.js"></script>
+
+</body>
+</html>
